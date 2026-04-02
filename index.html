@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISHIKA PATANI — Writer · Director · Creative Strategist</title>
+    <meta name="description"
+        content="Portfolio of Ishika Patani — Writer, Director, and Creative Strategist based in Bengaluru.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Archivo+Black&family=Caveat:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --beige: #FFF8E7;
+            --beige2: #EDE8DB;
+            --rust: #930500;
+            --ink: #1E1C17;
+            --muted: #7A7568;
+            --pink: #E8A0B4;
+            --yellow: #F5C842;
+            --teal: #2E9E8A;
+            --purple: #7B5EA7;
+            --green: #4A9B6F;
+            --blue: #95BBEA;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--beige);
+            color: var(--ink);
+            font-family: 'Space Mono', monospace;
+            cursor: none;
+            overflow-x: hidden;
+        }
+
+        /* SUB-CONTENT FONT */
+        .sec-sub,
+        .sc-brief,
+        .folder-sub,
+        .iw-brief,
+        .m-body,
+        .contact-band p,
+        .hero-subtitle {
+            font-family: 'Times New Roman', Times, serif !important;
+        }
+
+        .sec-sub {
+            font-size: 15px;
+        }
+
+        .sc-brief,
+        .iw-brief {
+            font-size: 15px;
+            line-height: 1.4;
+        }
+
+        .folder-sub {
+            font-size: 14px;
+        }
+
+        .m-body {
+            font-size: 16px;
+        }
+
+        .contact-band p {
+            font-size: 16px;
+        }
+
+        .hero-subtitle {
+            font-size: 16px;
+            letter-spacing: 0.1em;
+        }
+
+        /* CURSOR */
+        #cur {
+            position: fixed;
+            z-index: 9999;
+            pointer-events: none;
+            width: 28px;
+            height: 28px;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            transition: transform .1s;
+            will-change: left, top;
+        }
+
+        #cur-dot {
+            position: fixed;
+            z-index: 9998;
+            pointer-events: none;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--rust);
+            transform: translate(-50%, -50%);
+            transition: left .15s, top .15s;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 400;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 52px;
+            background: rgba(245, 240, 227, .88);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(216, 90, 48, .15);
+        }
+
+        .nav-logo {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 20px;
+            color: var(--ink);
+            letter-spacing: .05em;
+        }
+
+        .nav-logo span {
+            color: var(--rust);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            font-size: 10px;
+            color: var(--muted);
+            text-decoration: none;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            cursor: none;
+            transition: color .2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--rust);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 110px 40px 60px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.04'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: .28;
+            pointer-events: none;
+        }
+
+        .blob-pink {
+            width: 380px;
+            height: 380px;
+            background: var(--pink);
+            top: -60px;
+            right: -80px;
+        }
+
+        .blob-yellow {
+            width: 320px;
+            height: 320px;
+            background: var(--yellow);
+            bottom: 40px;
+            left: -60px;
+        }
+
+        .blob-teal {
+            width: 260px;
+            height: 260px;
+            background: var(--teal);
+            bottom: 100px;
+            right: 100px;
+        }
+
+        .hero-eyebrow {
+            font-size: 11px;
+            color: var(--muted);
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            text-align: center;
+            z-index: 2;
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .hero-eyebrow span {
+            color: var(--rust);
+        }
+
+        .hero-center {
+            display: flex;
+            align-items: center;
+            gap: 36px;
+            z-index: 10;
+            position: relative;
+        }
+
+        .hero-photo {
+            width: 160px;
+            height: 220px;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 3px solid rgba(30, 28, 23, .1);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, .15);
+            background: linear-gradient(135deg, var(--pink), var(--yellow));
+            transition: transform .3s;
+        }
+
+        .hero-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-photo:first-child {
+            transform: rotate(-6deg);
+        }
+
+        .hero-photo:last-child {
+            transform: rotate(6deg);
+        }
+
+        .hero-photo:hover {
+            transform: rotate(0) scale(1.05) !important;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .2);
+        }
+
+        .tablet {
+            width: 260px;
+            background: #1A1A18;
+            border-radius: 22px;
+            padding: 10px;
+            border: 2.5px solid #333;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, .22);
+        }
+
+        .tablet-screen {
+            background: var(--beige2);
+            border-radius: 14px;
+            height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .t-time {
+            font-size: 9px;
+            color: var(--muted);
+            letter-spacing: .1em;
+        }
+
+        .t-port {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 38px;
+            color: var(--ink);
+            line-height: 1;
+        }
+
+        .t-port em {
+            font-style: italic;
+            color: var(--rust);
+            font-family: 'Caveat', cursive;
+            font-size: 42px;
+        }
+
+        .t-bear {
+            position: absolute;
+            bottom: 10px;
+            right: 12px;
+            font-size: 24px;
+        }
+
+        .t-plane {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 12px;
+        }
+
+        .fobj {
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3px;
+            z-index: 3;
+        }
+
+        .fobj-icon {
+            font-size: 34px;
+            filter: drop-shadow(0 5px 10px rgba(0, 0, 0, .13));
+        }
+
+        .fobj-lbl {
+            font-size: 8px;
+            color: var(--muted);
+            letter-spacing: .05em;
+        }
+
+        .fo1 {
+            top: 17%;
+            left: 7%;
+            animation: fa 3.2s ease-in-out infinite;
+        }
+
+        .fo2 {
+            top: 14%;
+            right: 8%;
+            animation: fb 2.9s ease-in-out infinite .5s;
+        }
+
+        .fo3 {
+            bottom: 20%;
+            left: 5%;
+            animation: fa 3.6s ease-in-out infinite 1s;
+        }
+
+        .fo4 {
+            bottom: 18%;
+            right: 6%;
+            animation: fb 3.1s ease-in-out infinite .8s;
+        }
+
+        .fo5 {
+            top: 24%;
+            left: 28%;
+            animation: fa 2.7s ease-in-out infinite .3s;
+        }
+
+        .fo6 {
+            top: 22%;
+            right: 25%;
+            animation: fb 3.4s ease-in-out infinite 1.2s;
+        }
+
+        .fo7 {
+            bottom: 26%;
+            left: 25%;
+            animation: fa 3s ease-in-out infinite .6s;
+        }
+
+        @keyframes fa {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-4deg)
+            }
+
+            50% {
+                transform: translateY(-14px) rotate(4deg)
+            }
+        }
+
+        @keyframes fb {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(3deg)
+            }
+
+            50% {
+                transform: translateY(-11px) rotate(-3deg)
+            }
+        }
+
+        .hero-legend {
+            font-size: 8.5px;
+            color: var(--muted);
+            text-align: center;
+            letter-spacing: .05em;
+            z-index: 2;
+            margin-top: 14px;
+            line-height: 1.9;
+            position: relative;
+        }
+
+        .hero-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 52px;
+            text-align: center;
+            line-height: 1.1;
+            z-index: 2;
+            margin-top: 28px;
+            position: relative;
+        }
+
+        .hero-title em {
+            color: var(--rust);
+            font-style: italic;
+            font-family: 'Caveat', cursive;
+            font-size: 60px;
+        }
+
+        .hero-subtitle {
+            font-size: 10px;
+            color: var(--muted);
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-top: 10px;
+            z-index: 2;
+            position: relative;
+        }
+
+        /* MARQUEE */
+        .marquee-band {
+            overflow: hidden;
+            padding: 18px 0;
+            background: var(--ink);
+            border-top: 2px solid var(--rust);
+            border-bottom: 2px solid var(--rust);
+        }
+
+        .marquee-track {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            width: max-content;
+            animation: ticker 30s linear infinite;
+        }
+
+        .marquee-band:hover .marquee-track {
+            animation-play-state: paused;
+        }
+
+        @keyframes ticker {
+            to {
+                transform: translateX(-50%)
+            }
+        }
+
+        .m-logo {
+            height: 36px;
+            width: auto;
+            max-width: 120px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            opacity: .7;
+            transition: opacity .2s;
+        }
+
+        .m-logo:hover {
+            opacity: 1;
+        }
+
+        .m-logo-text {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 14px;
+            color: rgba(245, 240, 227, .6);
+            letter-spacing: .05em;
+            white-space: nowrap;
+            transition: color .2s;
+        }
+
+        .m-logo-text:hover {
+            color: var(--yellow);
+        }
+
+        /* SECTIONS */
+        .sec {
+            padding: 72px 52px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .sec-eye {
+            font-size: 10px;
+            color: var(--rust);
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .sec-h {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 36px;
+            margin-bottom: 6px;
+            line-height: 1.1;
+        }
+
+        .sec-sub {
+            font-size: 12px;
+            color: var(--muted);
+            margin-bottom: 32px;
+            line-height: 1.7;
+            max-width: 560px;
+        }
+
+        hr.div {
+            border: none;
+            border-top: 1px solid rgba(30, 28, 23, .08);
+            margin: 0 52px;
+        }
+
+        /* INSTAGRAM GRID */
+        .insta-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .ig-embed-card {
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1.5px solid rgba(30, 28, 23, .1);
+            background: #fff;
+            transition: transform .22s, box-shadow .22s;
+            cursor: none;
+        }
+
+        .ig-embed-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 36px rgba(0, 0, 0, .12);
+        }
+
+        .ig-embed-card iframe {
+            width: 100%;
+            height: 480px;
+            border: none;
+        }
+
+        .ig-embed-card.yt iframe {
+            height: 480px;
+        }
+
+        /* STRATEGY GRID */
+        .strat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .sc {
+            border-radius: 20px;
+            padding: 28px;
+            cursor: none;
+            transition: transform .22s, box-shadow .22s;
+            border: 1.5px solid rgba(255, 255, 255, .2);
+            position: relative;
+            overflow: hidden;
+            min-height: 280px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .sc:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .2);
+        }
+
+        .sc-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            filter: blur(2px);
+            transform: scale(1.05);
+        }
+
+        .sc-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .2) 0%, rgba(0, 0, 0, .7) 100%);
+        }
+
+        .sc-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .sc-icon {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .sc-name {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 20px;
+            margin-bottom: 6px;
+        }
+
+        .sc-brief {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .8);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .sc-btn {
+            font-size: 10px;
+            font-weight: 700;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, .5);
+            padding: 7px 18px;
+            border-radius: 20px;
+            display: inline-block;
+            cursor: none;
+            transition: all .2s;
+            background: transparent;
+        }
+
+        .sc:hover .sc-btn {
+            background: var(--rust);
+            border-color: var(--rust);
+        }
+
+        /* FOLDER CARDS */
+        .folders-section {
+            padding: 72px 52px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .folder-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .folder-card {
+            position: relative;
+            cursor: none;
+            transition: transform .3s;
+        }
+
+        .folder-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .folder-tab {
+            width: 50%;
+            height: 28px;
+            border-radius: 14px 14px 0 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .folder-body {
+            border-radius: 0 18px 18px 18px;
+            padding: 60px 22px 22px;
+            position: relative;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            text-align: center;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, .1);
+        }
+
+        .folder-peek {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 6px;
+            z-index: 3;
+        }
+
+        .folder-peek img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 10px;
+            border: 2px solid #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+            transition: transform .3s;
+        }
+
+        .folder-card:hover .folder-peek img {
+            transform: translateY(-8px);
+        }
+
+        .folder-peek img:nth-child(1) {
+            transform: rotate(-8deg);
+        }
+
+        .folder-peek img:nth-child(2) {
+            transform: rotate(3deg) translateY(-5px);
+        }
+
+        .folder-peek img:nth-child(3) {
+            transform: rotate(6deg);
+        }
+
+        .folder-name {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: var(--ink);
+        }
+
+        .folder-sub {
+            font-size: 10px;
+            color: var(--muted);
+            margin-bottom: 12px;
+        }
+
+        .folder-btn {
+            font-size: 10px;
+            font-weight: 700;
+            color: var(--ink);
+            border: 1.5px solid var(--ink);
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: none;
+            transition: all .2s;
+            background: transparent;
+        }
+
+        .folder-card:hover .folder-btn {
+            background: var(--ink);
+            color: var(--beige);
+        }
+
+        .fc-orange .folder-tab,
+        .fc-orange .folder-body {
+            background: #FFE0B2;
+        }
+
+        .fc-red .folder-tab,
+        .fc-red .folder-body {
+            background: #FFCDD2;
+        }
+
+        .fc-purple .folder-tab,
+        .fc-purple .folder-body {
+            background: #E1BEE7;
+        }
+
+        /* IF-I-WERE / IMAGINED CAMPAIGNS */
+        .ifiw-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .iw {
+            border-radius: 20px;
+            padding: 28px;
+            cursor: none;
+            transition: transform .22s, box-shadow .22s;
+            position: relative;
+            overflow: hidden;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .iw:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, .2);
+        }
+
+        .iw-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            filter: blur(2px);
+            transform: scale(1.05);
+        }
+
+        .iw-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .15) 0%, rgba(0, 0, 0, .75) 100%);
+        }
+
+        .iw-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+        }
+
+        .iw-icon {
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .iw-name {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 18px;
+            margin-bottom: 6px;
+        }
+
+        .iw-brief {
+            font-size: 11px;
+            color: rgba(255, 255, 255, .8);
+            line-height: 1.6;
+            margin-bottom: 14px;
+        }
+
+        .iw-btn {
+            font-size: 10px;
+            font-weight: 700;
+            color: #fff;
+            border: 1.5px solid rgba(255, 255, 255, .5);
+            padding: 7px 18px;
+            border-radius: 20px;
+            display: inline-block;
+            cursor: none;
+            transition: all .2s;
+            background: transparent;
+        }
+
+        .iw:hover .iw-btn {
+            background: var(--rust);
+            border-color: var(--rust);
+        }
+
+        /* MODAL */
+        .mbg {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 700;
+            background: rgba(30, 28, 23, .6);
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+        }
+
+        .mbg.on {
+            display: flex;
+        }
+
+        .mbox {
+            background: var(--beige);
+            border-radius: 22px;
+            padding: 38px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 82vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .mx {
+            position: absolute;
+            top: 16px;
+            right: 20px;
+            font-size: 18px;
+            color: var(--muted);
+            background: none;
+            border: none;
+            cursor: none;
+            line-height: 1;
+        }
+
+        .m-eye {
+            font-size: 9px;
+            color: var(--rust);
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .m-title {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 24px;
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .m-body {
+            font-size: 12px;
+            color: #4A4840;
+            line-height: 1.85;
+        }
+
+        .m-body strong {
+            color: var(--ink);
+            font-weight: 700;
+        }
+
+        .m-body h4 {
+            font-size: 10px;
+            color: var(--rust);
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin: 16px 0 6px;
+            font-weight: 700;
+        }
+
+        .m-body ul {
+            padding-left: 18px;
+            margin: 4px 0 10px;
+        }
+
+        .m-body li {
+            margin-bottom: 6px;
+        }
+
+        .m-body .m-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 8px;
+            margin: 16px 0;
+        }
+
+        .m-body .m-gallery img {
+            width: 100%;
+            height: 140px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* CONTACT */
+        .contact-band {
+            background: var(--ink);
+            padding: 72px 52px;
+            text-align: center;
+        }
+
+        .contact-band h2 {
+            font-family: 'Archivo Black', sans-serif;
+            font-size: 42px;
+            color: var(--beige);
+            margin-bottom: 8px;
+        }
+
+        .contact-band p {
+            font-size: 12px;
+            color: rgba(245, 240, 227, .5);
+            margin-bottom: 32px;
+        }
+
+        .c-btns {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .c-btn {
+            font-size: 11px;
+            padding: 11px 26px;
+            border-radius: 40px;
+            border: 1px solid rgba(245, 240, 227, .25);
+            color: var(--beige);
+            text-decoration: none;
+            cursor: none;
+            transition: all .2s;
+            background: transparent;
+        }
+
+        .c-btn:hover {
+            background: var(--rust);
+            border-color: var(--rust);
+        }
+
+        .foot {
+            text-align: center;
+            font-size: 10px;
+            color: var(--muted);
+            padding: 18px;
+            background: var(--ink);
+            border-top: 1px solid rgba(245, 240, 227, .08);
+        }
+
+        /* SCROLL REVEAL */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity .6s, transform .6s;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- CURSOR -->
+    <div id="cur"><svg viewBox="0 0 24 24" fill="#4A9BD9" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" />
+        </svg></div>
+    <div id="cur-dot"></div>
+
+    <!-- NAV -->
+    <nav>
+        <span class="nav-logo">ISHIKA PATANI <span>✦</span></span>
+        <div class="nav-links">
+            <a href="#brand">Brand Work</a>
+            <a href="#strategy">Strategy</a>
+            <a href="#beyond">Projects</a>
+            <a href="#imagine">Campaigns</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+        <div class="blob blob-pink"></div>
+        <div class="blob blob-yellow"></div>
+        <div class="blob blob-teal"></div>
+
+        <div class="fobj fo1" style="mix-blend-mode:multiply;"><img src="images/icon-camera.jpg" style="width:60px;"
+                alt="camera"></div>
+        <div class="fobj fo2" style="mix-blend-mode:multiply;"><img src="images/icon-tulips.jpg" style="width:70px;"
+                alt="tulips"></div>
+        <div class="fobj fo3" style="mix-blend-mode:multiply;"><img src="images/icon-cookies.jpg" style="width:60px;"
+                alt="cookies"></div>
+        <div class="fobj fo4" style="mix-blend-mode:multiply;"><img src="images/icon-headphones.jpg" style="width:70px;"
+                alt="headphones"></div>
+        <div class="fobj fo5" style="mix-blend-mode:multiply;"><img src="images/icon-passport.jpg" style="width:70px;"
+                alt="passport"></div>
+        <div class="fobj fo6" style="mix-blend-mode:multiply;"><img src="images/icon-nails.jpg" style="width:50px;"
+                alt="nails"></div>
+        <div class="fobj fo7" style="mix-blend-mode:multiply;"><img src="images/icon-coffee.jpg" style="width:40px;"
+                alt="coffee"></div>
+        <div class="fobj fo8"
+            style="mix-blend-mode:multiply;position:absolute;bottom:8%;left:50%;animation:fa 3.2s ease-in-out infinite;">
+            <img src="images/icon-sushi.jpg" style="width:50px;" alt="sushi"></div>
+
+        <p class="hero-eyebrow">Hi, I am <span>ISHIKA PATANI.</span> Welcome to my little creative corner.</p>
+
+        <div class="hero-center">
+            <div class="hero-photo"><img src="images/hero-1.jpg" alt="Ishika Patani"
+                    onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;font-size:40px>📷</div>'">
+            </div>
+            <div class="tablet">
+                <style>
+                    @keyframes hfade1 {
+
+                        0%,
+                        45%,
+                        100% {
+                            opacity: 1;
+                        }
+
+                        50%,
+                        95% {
+                            opacity: 0;
+                        }
+                    }
+
+                    @keyframes hfade2 {
+
+                        0%,
+                        45%,
+                        100% {
+                            opacity: 0;
+                        }
+
+                        50%,
+                        95% {
+                            opacity: 1;
+                        }
+                    }
+                </style>
+                <div class="tablet-screen" style="padding:0;background:#000;">
+                    <img src="/Users/prajvalitgaonkar/Downloads/hero-1.jpeg"
+                        style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;animation: hfade1 6s infinite ease-in-out;">
+                    <img src="images/hero-2.jpg"
+                        style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;animation: hfade2 6s infinite ease-in-out;">
+                </div>
+            </div>
+            <div class="hero-photo"><img src="images/hero-2.jpg" alt="Ishika at event"
+                    onerror="this.parentElement.innerHTML='<div style=display:flex;align-items:center;justify-content:center;height:100%;font-size:40px>✨</div>'">
+            </div>
+        </div>
+
+        <div class="hero-legend">(01) camera / (02) tulips / (03) cookies / (04) headphones / (05) passport / (06) nails
+            /
+            (07) coffee</div>
+        <h1 class="hero-title">Turning "What If"<br>into <em>"Watch This."</em></h1>
+        <p class="hero-subtitle">Writer · Director · Creative Strategist</p>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-band">
+        <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+
+    <!-- BRAND WORK -->
+    <div id="brand"></div>
+    <div class="sec reveal">
+        <p class="sec-eye">✦ Brand Work & Social Feed</p>
+        <h2 class="sec-h">Design in Action</h2>
+        <p class="sec-sub">Watch the reels — real brand work, real results. Hit play right here.</p>
+        <div class="insta-grid">
+            <div class="ig-embed-card"><iframe src="https://www.instagram.com/reel/DP1LSKHiV0l/embed/" scrolling="no"
+                    allowtransparency="true"></iframe></div>
+            <div class="ig-embed-card"><iframe src="https://www.instagram.com/reel/DQWmNuMESgk/embed/" scrolling="no"
+                    allowtransparency="true"></iframe></div>
+            <div class="ig-embed-card"><iframe src="https://www.instagram.com/reel/DJEj5HHBfJS/embed/" scrolling="no"
+                    allowtransparency="true"></iframe></div>
+            <div class="ig-embed-card"><iframe src="https://www.instagram.com/reel/DUstkfBE7Gl/embed/" scrolling="no"
+                    allowtransparency="true"></iframe></div>
+            <div class="ig-embed-card"><iframe src="https://www.instagram.com/reel/DJBSQqYSvX6/embed/" scrolling="no"
+                    allowtransparency="true"></iframe></div>
+            <div class="ig-embed-card"><iframe src="https://www.instagram.com/reel/DJmm609owjD/embed/" scrolling="no"
+                    allowtransparency="true"></iframe></div>
+            <div class="ig-embed-card"><iframe src="https://www.instagram.com/reel/DKo6xX5SHuy/embed/" scrolling="no"
+                    allowtransparency="true"></iframe></div>
+            <div class="ig-embed-card"><iframe src="https://www.instagram.com/reel/DMIrro_Tyxk/embed/" scrolling="no"
+                    allowtransparency="true"></iframe></div>
+            <div class="ig-embed-card yt"><iframe src="https://www.youtube.com/embed/N-qVfgoKcDY"
+                    allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+                    allowfullscreen></iframe></div>
+        </div>
+    </div>
+
+    <hr class="div">
+
+    <!-- CREATIVE STRATEGY -->
+    <div id="strategy"></div>
+    <div class="sec reveal">
+        <p class="sec-eye">✦ Creative Strategy</p>
+        <h2 class="sec-h">Campaigns I Built</h2>
+        <p class="sec-sub">Real briefs. Original thinking. Full strategy inside each card.</p>
+        <div class="strat-grid">
+            <div class="sc" onclick="openModal('ownly')">
+                <div class="sc-bg" style="background-image:url('images/bg-ownly.jpg');background-color:#E91E8C;"></div>
+                <div class="sc-overlay"></div>
+                <div class="sc-content">
+                    <div class="sc-icon">🫙</div>
+                    <div class="sc-name">Ownly</div>
+                    <div class="sc-brief">Nothing to hide, Ownly to give. A 45-day disruptive launch for Bengaluru's
+                        most
+                        transparent food delivery brand.</div><span class="sc-btn">See Strategy →</span>
+                </div>
+            </div>
+            <div class="sc" onclick="openModal('ngl')">
+                <div class="sc-bg" style="background-image:url('images/bg-ngl.jpg');background-color:#F5C842;"></div>
+                <div class="sc-overlay"></div>
+                <div class="sc-content">
+                    <div class="sc-icon">⚡</div>
+                    <div class="sc-name">NGL Energy</div>
+                    <div class="sc-brief">See Literal, Think Lateral. 5-phase campaign to embed an energy drink into Gen
+                        Z
+                        culture.</div><span class="sc-btn">See Strategy →</span>
+                </div>
+            </div>
+            <div class="sc" onclick="openModal('sportsyard')">
+                <div class="sc-bg" style="background-image:url('images/bg-sportsyard.jpg');background-color:#2E9E8A;">
+                </div>
+                <div class="sc-overlay"></div>
+                <div class="sc-content">
+                    <div class="sc-icon">🏸</div>
+                    <div class="sc-name">SportsYard</div>
+                    <div class="sc-brief">From boardrooms to pickleball courts. Corporates turned into a community.
+                    </div><span class="sc-btn">See Strategy →</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="div">
+
+    <!-- FOLDER CARDS - BEYOND THE DESK -->
+    <div id="beyond"></div>
+    <div class="folders-section reveal">
+        <p class="sec-eye">✦ Beyond the Desk</p>
+        <h2 class="sec-h">Projects & Productions</h2>
+        <p class="sec-sub">Click to open each folder — short films, YouTube, and live events.</p>
+        <div class="folder-grid">
+            <div class="folder-card fc-orange" onclick="openModal('shortfilms')">
+                <div class="folder-tab"></div>
+                <div class="folder-body">
+                    <div class="folder-peek">
+                        <img src="images/film-pronto.jpg" alt="Pronto"
+                            onerror="this.style.background='#D85A30';this.alt=''">
+                        <img src="images/film-crew-night.jpg" alt="Crew"
+                            onerror="this.style.background='#F5C842';this.alt=''">
+                        <img src="images/film-bts.jpg" alt="BTS" onerror="this.style.background='#E8A0B4';this.alt=''">
+                    </div>
+                    <div class="folder-name">Short Films</div>
+                    <div class="folder-sub">Parde Ke Peeche Films</div>
+                    <span class="folder-btn">Open Folder →</span>
+                </div>
+            </div>
+            <div class="folder-card fc-red" onclick="openModal('youtube')">
+                <div class="folder-tab"></div>
+                <div class="folder-body">
+                    <div class="folder-peek">
+                        <img src="images/film-crew-restaurant.jpg" alt="Team"
+                            onerror="this.style.background='#D85A30';this.alt=''">
+                    </div>
+                    <div class="folder-name">YouTube</div>
+                    <div class="folder-sub">Nazariya – Decoding Psychology</div>
+                    <span class="folder-btn">Open Folder →</span>
+                </div>
+            </div>
+            <div class="folder-card fc-purple" onclick="openModal('ncc')">
+                <div class="folder-tab"></div>
+                <div class="folder-body">
+                    <div class="folder-peek">
+                        <img src="images/ncc-hosting.jpg" alt="Hosting"
+                            onerror="this.style.background='#7B5EA7';this.alt=''">
+                    </div>
+                    <div class="folder-name">Experience & Hosting</div>
+                    <div class="folder-sub">Namma Creator Carnival</div>
+                    <span class="folder-btn">Open Folder →</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="div">
+
+    <!-- IMAGINED CAMPAIGNS -->
+    <div id="imagine"></div>
+    <div class="sec reveal">
+        <p class="sec-eye">✦ Imagined Campaigns</p>
+        <h2 class="sec-h">If I Were to Create Strategy<br>for These Brands</h2>
+        <p class="sec-sub">Real brands. Unsolicited ideas. Full strategy behind every card.</p>
+        <div class="ifiw-grid">
+            <div class="iw" onclick="openModal('maggi')">
+                <div class="iw-bg" style="background-image:url('images/bg-maggi.jpg');background-color:#F5C842;"></div>
+                <div class="iw-overlay"></div>
+                <div class="iw-content">
+                    <div class="iw-icon">🍜</div>
+                    <div class="iw-name">Maggi — Bowl Out</div>
+                    <div class="iw-brief">IPL 2026 second-screen commerce. Contextual delivery triggers synced to live
+                        match
+                        moments.</div><span class="iw-btn">See Strategy →</span>
+                </div>
+            </div>
+            <div class="iw" onclick="openModal('backup')">
+                <div class="iw-bg" style="background-image:url('images/bg-backup.jpg');background-color:#333;"></div>
+                <div class="iw-overlay"></div>
+                <div class="iw-content">
+                    <div class="iw-icon">🦾</div>
+                    <div class="iw-name">BACKUP</div>
+                    <div class="iw-brief">Smart apparel + medical-grade spinal science + streetwear. Haptic feedback
+                        that trains
+                        the brain.</div><span class="iw-btn">See Strategy →</span>
+                </div>
+            </div>
+            <div class="iw" onclick="openModal('dearzindagi')">
+                <div class="iw-bg" style="background-image:url('images/bg-dearzindagi.jpg');background-color:#2E9E8A;">
+                </div>
+                <div class="iw-overlay"></div>
+                <div class="iw-content">
+                    <div class="iw-icon">💛</div>
+                    <div class="iw-name">Dear Zindagi — 2026</div>
+                    <div class="iw-brief">Zero-budget emotional resonance. 100 red postboxes wrapped in Kaira's yellow
+                        ribbon.
+                    </div><span class="iw-btn">See Strategy →</span>
+                </div>
+            </div>
+            <div class="iw" onclick="openModal('kitkat')">
+                <div class="iw-bg" style="background-image:url('images/bg-kitkat.jpg');background-color:#D85A30;"></div>
+                <div class="iw-overlay"></div>
+                <div class="iw-content">
+                    <div class="iw-icon">🍫</div>
+                    <div class="iw-name">Dear Zindagi × Kit Kat</div>
+                    <div class="iw-brief">Rebranding the Kit Kat break as a mental health session.</div><span
+                        class="iw-btn">See
+                        Strategy →</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="contact-band">
+        <h2>Let's Build a Story.</h2>
+        <p>Got a brand, a brief, or a half-baked idea? Let's make it unforgettable.</p>
+        <div class="c-btns">
+            <a class="c-btn" href="mailto:ishikapatani279@gmail.com">✉ ishikapatani279@gmail.com</a>
+            <a class="c-btn" href="https://linkedin.com/in/ishika-sandeep-patani" target="_blank">in LinkedIn</a>
+            <a class="c-btn" href="https://instagram.com/ishuke_issues" target="_blank">✦ @ishuke_issues</a>
+        </div>
+    </div>
+    <div class="foot">© ISHIKA PATANI · Writer · Director · Creative Strategist · Bengaluru</div>
+
+    <!-- MODAL -->
+    <div class="mbg" id="modalBg" onclick="if(event.target===this)closeModal()">
+        <div class="mbox">
+            <button class="mx" onclick="closeModal()">✕</button>
+            <div id="modalInner"></div>
+        </div>
+    </div>
+
+    <script>
+        // Cursor
+        const cur = document.getElementById('cur'), dot = document.getElementById('cur-dot');
+        let mx = 0, my = 0, cx = 0, cy = 0;
+        document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx + 'px'; dot.style.top = my + 'px'; });
+        (function anim() { cx += (mx - cx) * .13; cy += (my - cy) * .13; cur.style.left = cx + 'px'; cur.style.top = cy + 'px'; requestAnimationFrame(anim) })();
+
+        // Marquee logos
+        const brands = ['UV', 'Travenza', 'Pronto', 'Metashot', 'Zecode', 'Lit', 'Rose in Love', 'Koben Electric', 'HT', 'Agilitas', 'Sprentzo', 'Ownly', 'Tuljaram Saraf'];
+        const logoFiles = ['logo-uv.png', 'logo-travenza.png', 'logo-pronto.png', 'logo-metashot.png', 'logo-zecode.png', 'logo-lit.png', 'logo-roseinlove.png', 'logo-koben.png', 'logo-ht.png', 'logo-agilitas.png', 'logo-sprentzo.png', 'logo-ownly.png', 'logo-tuljaram.png'];
+        const track = document.getElementById('marqueeTrack');
+        function buildMarquee() {
+            let html = '';
+            for (let r = 0; r < 2; r++) {
+                brands.forEach((b, i) => {
+                    html += `<img class="m-logo" src="images/${logoFiles[i]}" alt="${b}" onerror="this.outerHTML='<span class=m-logo-text>${b}</span>'">`;
+                });
+            }
+            track.innerHTML = html;
+        }
+        buildMarquee();
+
+        // Scroll reveal
+        const reveals = document.querySelectorAll('.reveal');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+        }, { threshold: .15 });
+        reveals.forEach(el => observer.observe(el));
+
+        // Modal data
+        const D = {
+            ownly: { eye: 'Creative Strategy · Campaign', title: 'Ownly — Nothing to Hide, Ownly to Give', body: `<h4>The Big Idea</h4>A 45-day awareness campaign proving that true transparency is the only way to deliver effectively in the food industry.<h4>Target Audience</h4><ul><li><strong>Students & Office Goers:</strong> Budget-conscious, 18–25, Bengaluru</li><li><strong>Health-Conscious Professionals:</strong> 24–30</li><li><strong>Premium Experience Seekers:</strong> 30–55</li><li><strong>Event Planners:</strong> Parties & events</li></ul><h4>Online Strategy</h4><ul><li><strong>"Guilt-Trip" Audit:</strong> Tool generating reports of Swiggy/Zomato spend</li><li><strong>Competitive Leaderboards:</strong> Challenge friends on food spend rankings</li><li><strong>The Zero Promise:</strong> Zero commission, zero platform fees — meals under ₹150</li></ul><h4>Offline Strategy</h4><ul><li>Delivery riders with <strong>see-through delivery boxes</strong></li><li><strong>High Striker activation</strong> — smash hidden fees</li><li><strong>Transparent packaging</strong> — glass containers</li></ul>` },
+            ngl: { eye: 'Youth Marketing · 5-Phase Campaign', title: 'NGL — See Literal, Think Lateral', body: `<h4>Phase 1 — Pattern Break</h4>Disrupt the scroll with "unhinged" content. Fast 2-second hooks.<h4>Phase 2 — Trust Flip</h4>"Myth Busters" reel series — founder addresses energy drink lies directly.<h4>Phase 3 — Curiosity Engineering</h4>"Shelf Curiosity Plays" — limited stock creating a "moving fast" effect.<h4>Phase 4 — Reality Shock</h4>"4 Big Cans" activations — visual sugar comparisons.<h4>Phase 5 — Youth Network</h4>Campus fest partnerships, weekly community spotlights.` },
+            sportsyard: { eye: 'Brand Activation · B2B2C', title: 'SportsYard — Boardrooms to Pickleball Courts', body: `<h4>Strategic Alignment</h4>Targets tech professionals, startup employees, co-working communities.<h4>Two-Tier Engagement</h4><ul><li><strong>Level 1 — The Hook:</strong> Office activations at 15 companies engaging 900–1000 employees</li><li><strong>Level 2 — The Action:</strong> 45 qualifying teams + 300+ spectators</li></ul><h4>Data & Financials</h4><ul><li><strong>100% Data Capture:</strong> 500+ professionals in CRM</li><li><strong>Budget:</strong> ₹1,37,500 net cost within ₹2L</li><li><strong>Retention Loop:</strong> Prize pools as store vouchers</li></ul>` },
+            maggi: { eye: 'If I Were · FMCG · IPL 2026', title: 'Maggi Bowl Out — IPL 2026', body: `<h4>The Positioning</h4>Maggi as the essential "second-screen" fuel.<h4>Online: Second-Screen Commerce</h4><ul><li><strong>The Commentary Box:</strong> Push notifications synced to live match events</li><li><strong>"Match-Fixing" Recipes:</strong> Chettinad Maggi for CSK, Misal Maggi for MI</li></ul><h4>Offline: Stadium Energy</h4><ul><li><strong>The Maggi Dugout:</strong> Experiential fan zones</li><li><strong>Blindfold Masala-Sachet Challenge</strong></li></ul>` },
+            backup: { eye: 'If I Were · Smart Apparel · Health-Tech', title: 'BACKUP — We\'ve Got Your Back', body: `<h4>The Science</h4>BACKUP delivers a gentle haptic "nudge" when you slouch — triggering the brain to engage muscles.<h4>The Product</h4><ul><li><strong>BACKUP Core:</strong> Pebble-sized magnetic sensor</li><li><strong>Professional:</strong> Ultra-thin "Stealth Tees"</li><li><strong>Graphic:</strong> Bold "Prawn Tees" + glow-in-the-dark "Skeleton Hoodies"</li></ul><h4>App Control</h4>Sensitivity Toggle — Sniper Mode (5°) to Chill Mode (20°).` },
+            dearzindagi: { eye: 'If I Were · Zero-Budget · Emotional Marketing', title: 'Dear Zindagi — Marketing in 2026', body: `<h4>The Problem</h4>The Gen Z loneliness epidemic.<h4>The "Letter to Zindagi" Execution</h4><ul><li><strong>Physical:</strong> 100 red postboxes wrapped in Kaira's yellow ribbon</li><li><strong>Interaction:</strong> Postcards + pens for letters to "future self"</li><li><strong>Digital:</strong> Volunteer collects letters, posts anonymous entries to Instagram</li></ul><h4>Why It Works</h4>Zero budget. Maximum emotional resonance.` },
+            kitkat: { eye: 'If I Were · Brand Collab · Mental Health', title: 'Dear Zindagi × Kit Kat', body: `<h4>The Reframe</h4>Rebrand the Kit Kat break into a necessary emotional reset.<h4>Offline: "Jug-Approved" Break Benches</h4><ul><li>Bright red benches: "Sitting here counts as a session."</li><li><strong>The Snap-Box:</strong> Dispenses a Kit Kat Mini when you sit</li></ul><h4>Digital: Break the Spiral</h4><ul><li>Chaotic "Adulting" montage that "snaps" into calm</li><li><strong>X Break-Reply Bot</strong> on "Burnout" or "Monday Blues"</li></ul>` },
+            shortfilms: { eye: 'Production House · Short Films', title: 'Parde Ke Peeche Films', body: `<p><em>"It's our baby, our own film production crew with the most passionate people pouring their lives into making films."</em></p><h4>PRATIBIMB – Reflection</h4><strong>Role:</strong> Writer & Director<br>A journey of a transgender person reconnecting with their authentic self through the symbol of a mirror, reclaiming childhood passions buried by societal expectations.<h4>PRONTO – Cleaning Services</h4><strong>Role:</strong> Writer & Creative Director<br>A fun, relatable look at bachelor life. Pronto isn't just a service; it's the ultimate life hack for the "cool" adult who refuses to live in a mess.<h4>LUCKY PRASAD</h4><strong>Role:</strong> Writer & Creative Director<br>An emotional reminder that behind every delivery is a human being. The film follows a delivery boy's resilience, ending in a tragic turn that highlights the weight of our actions.<div class="m-gallery"><img src="images/film-pronto.jpg" alt="Pronto"><img src="images/film-crew-night.jpg" alt="Crew"><img src="images/film-bts.jpg" alt="BTS"><img src="images/film-crew-restaurant.jpg" alt="Team"></div>` },
+            youtube: { eye: 'YouTube · Psychology', title: 'Nazariya — Decoding Psychology', body: `<p>I explored the psychology of entertainment by doing it all — from coming up with the ideas and doing the research to directing the talent.</p><p>This was where I really learned how to <strong>lead a film crew</strong>.</p><h4>What I Did</h4><ul><li>Concept ideation & research</li><li>Script writing</li><li>Talent direction</li><li>Crew management</li></ul>` },
+            ncc: { eye: 'Experience · Event Hosting', title: 'Namma Creator Carnival', body: `<h4>Role: Emcee (Host) & Sponsorship Team</h4><p>Managing the stage and the money. From handling live audiences to coordinating sponsors — this was the full spectrum of event production.</p><div class="m-gallery"><img src="images/ncc-hosting.jpg" alt="Hosting"></div>` }
+        };
+
+        function openModal(id) {
+            const d = D[id];
+            document.getElementById('modalInner').innerHTML = `<div class="m-eye">${d.eye}</div><div class="m-title">${d.title}</div><div class="m-body">${d.body}</div>`;
+            document.getElementById('modalBg').classList.add('on');
+        }
+        function closeModal() { document.getElementById('modalBg').classList.remove('on'); }
+    </script>
+</body>
+
+</html>
